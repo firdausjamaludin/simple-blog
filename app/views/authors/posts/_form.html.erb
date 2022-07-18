@@ -1,0 +1,44 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<form >
+  <div class="mb-3">
+    <%= form.label :header_image, class: "form-label" %>
+    <%= form.file_field :header_image, class: "form-control" %>
+    <div class="mt-1">
+      <small>Current image</small>
+        <div>
+          <% if post.header_image.present? %>
+          <%= image_tag(post.header_image, width: "200px") %>
+          <% end%>
+        </div>        
+    </div>    
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="d-grid gap-2 mb-2">
+    <%= form.submit class: "btn btn-primary" %>
+  </div> 
+
+</form>
+  
+<% end %>
