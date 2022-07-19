@@ -13,7 +13,7 @@
           <div class="col-md-2 ">        
             <% if post.header_image.present? %>
               <div >
-                <%= image_tag(post.header_image, width: "100%", class: "mx-auto d-block") %>
+                <%= image_tag(post.header_image, width: "100%", class: "rounded mx-auto d-block", style:"width: 100px; height: 100px; object-fit: cover;") %>
               </div>              
             <% end%>
           </div>

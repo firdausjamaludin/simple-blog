@@ -19,13 +19,13 @@
       <small>Current image</small>
         <div>
           <% if post.header_image.present? %>
-          <%= image_tag(post.header_image, width: "200px") %>
+          <%= image_tag(post.header_image, class: "rounded mt-2", style:"width: 100px; height: 100px; object-fit: cover;") %>
           <% end%>
         </div>        
     </div>    
   </div>
 
-  <div class="mb-3">
+  <div class="mb-2">
     <%= form.label :title, class: "form-label" %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
